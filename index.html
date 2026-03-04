@@ -216,8 +216,10 @@
       letter-spacing: 0.05em; color: var(--text-muted);
     }
 
-    tr.weekend { background: var(--weekend-bg); }
-    tr.weekend .day-name { color: var(--green-mid); }
+    tr.weekend { background: var(--mint); }
+    tr.weekend .day-number { color: var(--green-mid); }
+    tr.weekend .day-name { color: var(--green-mid); font-weight: 700; }
+    tr.weekend td:first-child { border-left: 3px solid var(--green-accent); }
 
     tr.today {
       background: var(--green-dark) !important;
@@ -401,6 +403,7 @@
     <div class="archive-year">
       <div class="archive-year-label">2024</div>
       <div class="archive-links">
+        <a class="archive-link disabled">Ene</a>
         <a class="archive-link" href="/archivo/2402.html">Feb</a>
         <a class="archive-link" href="/archivo/2403.html">Mar</a>
         <a class="archive-link" href="/archivo/2404.html">Abr</a>
@@ -421,6 +424,21 @@
         <a class="archive-link" href="/archivo/2502.html">Feb</a>
         <a class="archive-link" href="/archivo/2503.html">Mar</a>
         <a class="archive-link" href="/archivo/2504.html">Abr</a>
+        <a class="archive-link disabled">May</a>
+        <a class="archive-link disabled">Jun</a>
+        <a class="archive-link disabled">Jul</a>
+        <a class="archive-link disabled">Ago</a>
+        <a class="archive-link disabled">Sep</a>
+        <a class="archive-link disabled">Oct</a>
+        <a class="archive-link disabled">Nov</a>
+        <a class="archive-link disabled">Dic</a>
+      </div>
+    </div>
+    <div class="archive-year">
+      <div class="archive-year-label">2026</div>
+      <div class="archive-links">
+        <a class="archive-link disabled">Ene</a>
+        <a class="archive-link disabled">Feb</a>
       </div>
     </div>
   </div>
