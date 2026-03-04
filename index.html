@@ -112,7 +112,7 @@
 
     .hero-title {
       font-family: 'DM Sans', sans-serif;
-      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
       font-weight: 500; color: white;
       line-height: 1.2; letter-spacing: -0.01em;
     }
@@ -216,16 +216,17 @@
       letter-spacing: 0.05em; color: var(--text-muted);
     }
 
-    tr.weekend { background: #e8f5ee; }
+    tr.weekend td { background: #d4eedf; }
     tr.weekend .day-number { color: var(--green-mid); }
     tr.weekend .day-name { color: var(--green-mid); font-weight: 700; }
 
     tr.today {
-      background: var(--green-dark) !important;
       box-shadow: 0 4px 24px rgba(26,61,43,0.3);
       transform: scale(1.005);
     }
-    tr.today td             { color: white; }
+    tr.today td             { background: var(--green-dark); color: white; }
+    tr.today td:first-child { border-radius: var(--radius-sm) 0 0 var(--radius-sm); }
+    tr.today td:last-child  { border-radius: 0 var(--radius-sm) var(--radius-sm) 0; }
     tr.today .day-number    { color: white; }
     tr.today .day-name      { color: var(--green-light); }
     tr.today .pharmacy-name { color: white; font-weight: 600; }
@@ -371,11 +372,11 @@
 
 <div class="info-strip">
   <div class="info-item">
-    <div class="info-icon">🌙</div>
+    <div class="info-icon">💊</div>
     <div><strong>Días laborables</strong><span> · de 23:00 a 9:30 del día siguiente</span></div>
   </div>
   <div class="info-item">
-    <div class="info-icon">☀️</div>
+    <div class="info-icon">🔔</div>
     <div><strong>Domingos y festivos</strong><span> · de 9:30 a 9:30 del día siguiente (24h)</span></div>
   </div>
 </div>
