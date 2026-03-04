@@ -399,9 +399,11 @@
         padding: 2px 0;
         border-radius: 0 !important;
         font-size: 0.85rem;
+        background: transparent;
       }
 
-      /* Today: color on the tr (card), not on individual td */
+      /* Apply background to the tr card, not individual td */
+      tr.weekend { background: #d4eedf !important; }
       tr.today { background: var(--green-dark) !important; }
 
       .day-cell { margin-bottom: 4px; }
