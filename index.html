@@ -3,10 +3,80 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Farmacias de guardia en Paracuellos, Ajalvir y Daganzo">
-  <meta name="keywords" content="farmacias, farmacia, guardia, de guardia, paracuellos, paracuellos de jarama, ajalvir, daganzo, 2026, marzo">
+
+  <!-- Primary SEO -->
+  <title>Farmacias de Guardia en Paracuellos de Jarama, Ajalvir y Daganzo – Marzo 2026</title>
+  <meta name="description" content="Consulta qué farmacia está de guardia hoy en Paracuellos de Jarama, Ajalvir y Daganzo. Calendario completo de marzo 2026 con direcciones y enlace a Google Maps.">
+  <meta name="keywords" content="farmacia de guardia Paracuellos, farmacia de guardia Ajalvir, farmacia de guardia Daganzo, farmacias guardia Paracuellos de Jarama, farmacia abierta hoy Paracuellos, farmacia turno noche Paracuellos, farmacia domingo Paracuellos, farmacia festivo Paracuellos, marzo 2026">
+  <meta name="author" content="Nacho, vecino de Paracuellos de Jarama">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://farmaciasdeguardiaparacuellos.es/">
   <link rel="icon" type="image/x-icon" href="/cruz.png">
-  <title>Farmacias de Guardia · Paracuellos · Ajalvir · Daganzo</title>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:url" content="https://farmaciasdeguardiaparacuellos.es/">
+  <meta property="og:title" content="Farmacias de Guardia – Paracuellos, Ajalvir y Daganzo · Marzo 2026">
+  <meta property="og:description" content="¿Qué farmacia está de guardia hoy? Consulta el calendario de marzo 2026 para Paracuellos de Jarama, Ajalvir y Daganzo con direcciones y mapa.">
+  <meta property="og:site_name" content="Farmacias de Guardia Paracuellos">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Farmacias de Guardia – Paracuellos, Ajalvir y Daganzo · Marzo 2026">
+  <meta name="twitter:description" content="¿Qué farmacia está de guardia hoy? Calendario de marzo 2026 con direcciones y mapa para Paracuellos de Jarama, Ajalvir y Daganzo.">
+
+  <!-- JSON-LD: WebPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Farmacias de Guardia en Paracuellos de Jarama, Ajalvir y Daganzo – Marzo 2026",
+    "description": "Calendario de farmacias de guardia para marzo 2026 en Paracuellos de Jarama, Ajalvir y Daganzo, con direcciones y enlace a Google Maps.",
+    "url": "https://farmaciasdeguardiaparacuellos.es/",
+    "inLanguage": "es",
+    "author": { "@type": "Person", "name": "Nacho" },
+    "about": {
+      "@type": "Thing",
+      "name": "Farmacias de guardia",
+      "description": "Servicio de guardia farmacéutica en los municipios de Paracuellos de Jarama, Ajalvir y Daganzo de Abajo (Madrid)"
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Qué farmacia está de guardia hoy en Paracuellos de Jarama?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Consulta el calendario de guardia de marzo 2026 en esta página para saber qué farmacia está abierta hoy en Paracuellos de Jarama, Ajalvir o Daganzo."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿En qué horario abren las farmacias de guardia en Paracuellos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Los días laborables el turno de guardia es de 23:00 a 9:30 del día siguiente. Los domingos y festivos la guardia dura 24 horas, de 9:30 a 9:30 del día siguiente."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Hay farmacia de guardia en Ajalvir y Daganzo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. El servicio de guardia cubre los municipios de Paracuellos de Jarama, Ajalvir y Daganzo de Abajo. Cada día le corresponde el turno a una farmacia diferente de los tres municipios."
+        }
+      }
+    ]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
   <style>
@@ -35,6 +105,12 @@
       color: var(--text);
       min-height: 100vh;
       line-height: 1.6;
+    }
+
+    .visually-hidden {
+      position: absolute; width: 1px; height: 1px;
+      padding: 0; margin: -1px; overflow: hidden;
+      clip: rect(0,0,0,0); white-space: nowrap; border: 0;
     }
 
     /* ─── HEADER ─── */
@@ -311,15 +387,19 @@
         overflow: hidden;
       }
 
-      .schedule-table tbody td {
+      .schedule-table tbody tr:not(.weekend):not(.today) td {
         padding: 2px 0;
         border-radius: 0 !important;
         font-size: 0.85rem;
-        background: transparent !important;
+        background: transparent;
       }
 
-      /* Weekend: color on the tr (card), not on individual td */
-      tr.weekend { background: #d4eedf; }
+      .schedule-table tbody tr.weekend td,
+      .schedule-table tbody tr.today td {
+        padding: 2px 0;
+        border-radius: 0 !important;
+        font-size: 0.85rem;
+      }
 
       /* Today: color on the tr (card), not on individual td */
       tr.today { background: var(--green-dark) !important; }
@@ -332,22 +412,24 @@
 </head>
 <body>
 
-<header>
+<header role="banner">
   <div class="logo">
-    <div class="logo-cross"></div>
+    <div class="logo-cross" aria-hidden="true"></div>
     <div class="logo-text">
       <div class="main">Farmacias de Guardia</div>
       <div class="sub">Paracuellos · Ajalvir · Daganzo</div>
     </div>
   </div>
-  <div class="header-towns">
-    <span class="town-badge">Paracuellos de Jarama</span>
-    <span class="town-badge">Ajalvir</span>
-    <span class="town-badge">Daganzo</span>
-  </div>
+  <nav aria-label="Municipios">
+    <div class="header-towns">
+      <span class="town-badge">Paracuellos de Jarama</span>
+      <span class="town-badge">Ajalvir</span>
+      <span class="town-badge">Daganzo</span>
+    </div>
+  </nav>
 </header>
 
-<div class="hero">
+<section class="hero" aria-label="Farmacia de guardia hoy">
   <div style="padding-top: 36px; margin-bottom: 28px;">
     <div class="hero-label">
       <div class="pulse-dot"></div>
@@ -375,18 +457,18 @@
       </a>
     </div>
   </div>
-</div>
+</section>
 
-<div class="info-strip">
+<section class="info-strip" aria-label="Horarios de guardia">
   <div class="info-item">
-    <div class="info-icon">💊</div>
+    <div class="info-icon" aria-hidden="true">💊</div>
     <div><strong>Días laborables</strong><span> · de 23:00 a 9:30 del día siguiente</span></div>
   </div>
   <div class="info-item">
-    <div class="info-icon">🔔</div>
+    <div class="info-icon" aria-hidden="true">🔔</div>
     <div><strong>Domingos y festivos</strong><span> · de 9:30 a 9:30 del día siguiente (24h)</span></div>
   </div>
-</div>
+</section>
 
 <main>
   <div class="section-header">
@@ -394,68 +476,71 @@
     <span class="month-tag">Marzo 2026</span>
   </div>
 
-  <table class="schedule-table" id="schedule-table">
+  <table class="schedule-table" id="schedule-table" aria-label="Farmacias de guardia marzo 2026">
+    <caption class="visually-hidden">Calendario de farmacias de guardia en Paracuellos de Jarama, Ajalvir y Daganzo para marzo de 2026</caption>
     <thead>
       <tr>
-        <th>Día</th>
-        <th>Farmacia</th>
-        <th>Dirección</th>
+        <th scope="col">Día</th>
+        <th scope="col">Farmacia</th>
+        <th scope="col">Dirección</th>
       </tr>
     </thead>
     <tbody id="schedule-body"></tbody>
   </table>
 
   <div class="archive-section">
-    <div class="archive-title">Meses anteriores</div>
-    <div class="archive-year">
-      <div class="archive-year-label">2024</div>
-      <div class="archive-links">
-        <a class="archive-link disabled">Ene</a>
-        <a class="archive-link" href="/archivo/2402.html">Feb</a>
-        <a class="archive-link" href="/archivo/2403.html">Mar</a>
-        <a class="archive-link" href="/archivo/2404.html">Abr</a>
-        <a class="archive-link" href="/archivo/2405.html">May</a>
-        <a class="archive-link" href="/archivo/2406.html">Jun</a>
-        <a class="archive-link" href="/archivo/2407.html">Jul</a>
-        <a class="archive-link" href="/archivo/2408.html">Ago</a>
-        <a class="archive-link disabled">Sep</a>
-        <a class="archive-link disabled">Oct</a>
-        <a class="archive-link" href="/archivo/2411.html">Nov</a>
-        <a class="archive-link" href="/archivo/2412.html">Dic</a>
+    <h2 class="archive-title">Meses anteriores</h2>
+    <nav aria-label="Archivo de meses anteriores">
+      <div class="archive-year">
+        <div class="archive-year-label">2024</div>
+        <div class="archive-links">
+          <a class="archive-link disabled" aria-disabled="true">Ene</a>
+          <a class="archive-link" href="/archivo/2402.html">Feb</a>
+          <a class="archive-link" href="/archivo/2403.html">Mar</a>
+          <a class="archive-link" href="/archivo/2404.html">Abr</a>
+          <a class="archive-link" href="/archivo/2405.html">May</a>
+          <a class="archive-link" href="/archivo/2406.html">Jun</a>
+          <a class="archive-link" href="/archivo/2407.html">Jul</a>
+          <a class="archive-link" href="/archivo/2408.html">Ago</a>
+          <a class="archive-link disabled" aria-disabled="true">Sep</a>
+          <a class="archive-link disabled" aria-disabled="true">Oct</a>
+          <a class="archive-link" href="/archivo/2411.html">Nov</a>
+          <a class="archive-link" href="/archivo/2412.html">Dic</a>
+        </div>
       </div>
-    </div>
-    <div class="archive-year">
-      <div class="archive-year-label">2025</div>
-      <div class="archive-links">
-        <a class="archive-link" href="/archivo/2501.html">Ene</a>
-        <a class="archive-link" href="/archivo/2502.html">Feb</a>
-        <a class="archive-link" href="/archivo/2503.html">Mar</a>
-        <a class="archive-link" href="/archivo/2504.html">Abr</a>
-        <a class="archive-link disabled">May</a>
-        <a class="archive-link disabled">Jun</a>
-        <a class="archive-link disabled">Jul</a>
-        <a class="archive-link disabled">Ago</a>
-        <a class="archive-link disabled">Sep</a>
-        <a class="archive-link disabled">Oct</a>
-        <a class="archive-link disabled">Nov</a>
-        <a class="archive-link disabled">Dic</a>
+      <div class="archive-year">
+        <div class="archive-year-label">2025</div>
+        <div class="archive-links">
+          <a class="archive-link" href="/archivo/2501.html">Ene</a>
+          <a class="archive-link" href="/archivo/2502.html">Feb</a>
+          <a class="archive-link" href="/archivo/2503.html">Mar</a>
+          <a class="archive-link" href="/archivo/2504.html">Abr</a>
+          <a class="archive-link disabled" aria-disabled="true">May</a>
+          <a class="archive-link disabled" aria-disabled="true">Jun</a>
+          <a class="archive-link disabled" aria-disabled="true">Jul</a>
+          <a class="archive-link disabled" aria-disabled="true">Ago</a>
+          <a class="archive-link disabled" aria-disabled="true">Sep</a>
+          <a class="archive-link disabled" aria-disabled="true">Oct</a>
+          <a class="archive-link disabled" aria-disabled="true">Nov</a>
+          <a class="archive-link disabled" aria-disabled="true">Dic</a>
+        </div>
       </div>
-    </div>
-    <div class="archive-year">
-      <div class="archive-year-label">2026</div>
-      <div class="archive-links">
-        <a class="archive-link disabled">Ene</a>
-        <a class="archive-link disabled">Feb</a>
+      <div class="archive-year">
+        <div class="archive-year-label">2026</div>
+        <div class="archive-links">
+          <a class="archive-link disabled" aria-disabled="true">Ene</a>
+          <a class="archive-link disabled" aria-disabled="true">Feb</a>
+        </div>
       </div>
-    </div>
+    </nav>
   </div>
 </main>
 
-<footer>
+<footer role="contentinfo">
   <p>Hecho con <span class="footer-heart">❤️</span> por Nacho, un vecino de Paracuellos 🌿</p>
   <p style="margin-top: 8px;">
     ¿Te ha sido útil?
-    <a href="https://www.buymeacoffee.com/nachoad?l=es" target="_blank">☕ Invítame a un café</a>
+    <a href="https://www.buymeacoffee.com/nachoad?l=es" target="_blank" rel="noopener noreferrer">☕ Invítame a un café</a>
   </p>
 </footer>
 
