@@ -1,218 +1,507 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Farmacias de guardia en Paracuellos, Ajalvir y Daganzo">
+  <meta name="keywords" content="farmacias, farmacia, guardia, de guardia, paracuellos, paracuellos de jarama, ajalvir, daganzo, 2026, marzo">
+  <link rel="icon" type="image/x-icon" href="/cruz.png">
+  <title>Farmacias de Guardia · Paracuellos · Ajalvir · Daganzo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f4f7f2;
+      --surface: #ffffff;
+      --surface2: #eef3ec;
+      --green-dark: #1a3d2b;
+      --green-mid: #2e6b47;
+      --green-accent: #3cb76a;
+      --green-light: #a8e6bc;
+      --mint: #d6f0e0;
+      --text: #111c17;
+      --text-muted: #5a7265;
+      --border: #d1e5d8;
+      --weekend-bg: #f0faf4;
+      --radius: 16px;
+      --radius-sm: 8px;
+    }
 
-<!doctype html>
-<html lang="en">
-  <head>
-	<link rel="icon" type="image/x-icon" href="/cruz.png">
-	<meta charset="utf-8">
-	<meta name="description" content="Farmacias de guardia en Paracuellos, Ajalvir y Daganzo">
-	<meta name="keywords" content="farmacias, farmacia, guardia, de guardia, paracuellos, ajalvir, daganzo, mes, 2024, enero, febrero, marzo, abril, mayo, junio, julio, agosto, septiembre, noviembre, octubre, diciembre">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Farmacias de guardia en Paracuellos, Ajalvir y Daganzo</title>
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-	  
-  </head>
-  <body>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-	<div class="container">
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
 
-		<br>
-		<div class="row">
-			<div class="col-2 text-start">
-				<img src="https://sede-electronica.rivasciudad.es/wp-content/uploads/sites/6/2018/04/farmacia.jpg" class="img-fluid" alt="cruz-farmacia">
-			</div>
-			<div class="col-10">
-				<h1>Farmacias de Guardia en Paracuellos de Jarama, Ajalvir y Daganzo</h1>
-			</div>
-		</div>
-		
-		<br>
+    /* ─── HEADER ─── */
+    header {
+      background: var(--green-dark);
+      padding: 20px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
 
-		<h1 class="display-4 text-primary text-center">Abril 2025</h1>
- 
-		<div class="alert alert-primary" role="alert">
-			<b>Laborables</b>: de 23:00 a 9:30 del día siguiente.
-			<b>Domingos y Festivos</b>: de 9:30 a 9:30 del día siguiente.
-		</div>
+    .logo { display: flex; align-items: center; gap: 14px; }
 
-		<table class="table table-hover">
-			<thead>
-				<tr>
-					<th scope="col">Día</th>
-					<th scope="col">Farmacia abierta</th>
-					<th scope="col">Dirección</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th scope="row">1 M</th>
-					<td>Castellano   <span class="badge bg-success-subtle text-success-emphasis">Daganzo</span> </td>
-					<td><a href="https://maps.app.goo.gl/1sbq1K19Q8eEijuj6">C/ Algete, 4</a></td>
-				</tr>
-				<tr>
-					<th scope="row">2 X</th>
-					<td>Arango   <span class="badge bg-primary-subtle text-primary-emphasis">Paracuellos</span> </td>
-					<td><a href="https://maps.app.goo.gl/56eyXWZpfcJcBL839">C/ Quevedo, 15</a></td>
-				</tr>
-				<tr>
-					<th scope="row">3 J</th>
-					<td>Lojo Galván   <span class="badge bg-warning-subtle text-warning-emphasis">Ajalvir</span> </td>
-					<td><a href="https://maps.app.goo.gl/F4Rm9PURtv2Cukvd7">C/ Carlos Ruiz, 16</a></td>
-				</tr>
-				<tr>
-					<th scope="row">4 V</th>
-					<td>Riquelme   <span class="badge bg-primary-subtle text-primary-emphasis">Paracuellos</span> </td>
-					<td><a href="https://maps.app.goo.gl/N6hQevUZqf3SmiRK6">C/ Real, 6, local drcha.</a></td>
-				</tr>
-				<tr class="table-secondary">
-					<th scope="row">5 S</th>
-					<td>Real Paracuellos (Gonzalez)   <span class="badge bg-primary-subtle text-primary-emphasis">Paracuellos</span> </td>
-					<td><a href="https://maps.app.goo.gl/JU7czHbRYgEUPo4i8">C/ de la Rda. de la Fuente, 1</a></td>
-				</tr>
-				<tr class="table-secondary">
-					<th scope="row">6 D</th>
-					<td>Real Paracuellos (Gonzalez)   <span class="badge bg-primary-subtle text-primary-emphasis">Paracuellos</span> </td>
-					<td><a href="https://maps.app.goo.gl/JU7czHbRYgEUPo4i8">C/ de la Rda. de la Fuente, 1</a></td>
-				</tr>
-				<tr>
-					<th scope="row">7 L</th>
-					<td>Remedios   <span class="badge bg-primary-subtle text-primary-emphasis">Paracuellos</span> </td>
-					<td><a href="https://maps.app.goo.gl/yYx7c26g37TXQA477">C/ de Antonia Herranz, 2</a></td>
-				</tr>
-				<tr>
-					<th scope="row">8 M</th>
-					<td>F4 Otero   <span class="badge bg-primary-subtle text-primary-emphasis">Paracuellos</span> </td>
-					<td><a href="https://maps.app.goo.gl/JhzuaSRuhsvBv3EM9">C/ Quevedo s/n Local nº4</a></td>
-				</tr>
-				<tr>
-					<th scope="row">9 X</th>
-					<td>Riquelme   <span class="badge bg-primary-subtle text-primary-emphasis">Paracuellos</span> </td>
-					<td><a href="https://maps.app.goo.gl/N6hQevUZqf3SmiRK6">C/ Real, 6, local drcha.</a></td>
-				</tr>
-				<tr>
-					<th scope="row">10 J</th>
-					<td>Real Paracuellos (Gonzalez)   <span class="badge bg-primary-subtle text-primary-emphasis">Paracuellos</span> </td>
-					<td><a href="https://maps.app.goo.gl/JU7czHbRYgEUPo4i8">C/ de la Rda. de la Fuente, 1</a></td>
-				</tr>
-				<tr>
-					<th scope="row">11 V</th>
-					<td>Lojo Galván   <span class="badge bg-warning-subtle text-warning-emphasis">Ajalvir</span> </td>
-					<td><a href="https://maps.app.goo.gl/F4Rm9PURtv2Cukvd7">C/ Carlos Ruiz, 16</a></td>
-				</tr>
-				<tr class="table-secondary">
-					<th scope="row">12 S</th>
-					<td>Rodriguez   <span class="badge bg-primary-subtle text-primary-emphasis">Paracuellos</span> </td>
-					<td><a href="https://maps.app.goo.gl/Smiz9zX78ZwxNSiu5">Centro comercial Miramadrid, P.º de las Camelias, s/n</a></td>
-				</tr>
-				<tr class="table-secondary">
-					<th scope="row">13 D</th>
-					<td>Rodriguez   <span class="badge bg-primary-subtle text-primary-emphasis">Paracuellos</span> </td>
-					<td><a href="https://maps.app.goo.gl/Smiz9zX78ZwxNSiu5">Centro comercial Miramadrid, P.º de las Camelias, s/n</a></td>
-				</tr>
-				<tr>
-					<th scope="row">14 L</th>
-					<td>Arango   <span class="badge bg-primary-subtle text-primary-emphasis">Paracuellos</span> </td>
-					<td><a href="https://maps.app.goo.gl/56eyXWZpfcJcBL839">C/ Quevedo, 15</a></td>
-				</tr>
-				<tr>
-					<th scope="row">15 M</th>
-					<td>Castellano   <span class="badge bg-success-subtle text-success-emphasis">Daganzo</span> </td>
-					<td><a href="https://maps.app.goo.gl/1sbq1K19Q8eEijuj6">C/ Algete, 4</a></td>
-				</tr>
-				<tr>
-					<th scope="row">16 X</th>
-					<td>Rodriguez   <span class="badge bg-primary-subtle text-primary-emphasis">Paracuellos</span> </td>
-					<td><a href="https://maps.app.goo.gl/Smiz9zX78ZwxNSiu5">Centro comercial Miramadrid, P.º de las Camelias, s/n</a></td>
-				</tr>
-				<tr>
-					<th scope="row">17 J</th>
-					<td>Remedios   <span class="badge bg-primary-subtle text-primary-emphasis">Paracuellos</span> </td>
-					<td><a href="https://maps.app.goo.gl/yYx7c26g37TXQA477">C/ de Antonia Herranz, 2</a></td>
-				</tr>
-				<tr>
-					<th scope="row">18 V</th>
-					<td>Remedios   <span class="badge bg-primary-subtle text-primary-emphasis">Paracuellos</span> </td>
-					<td><a href="https://maps.app.goo.gl/yYx7c26g37TXQA477">C/ de Antonia Herranz, 2</a></td>
-				</tr>
-				<tr class="table-secondary">
-					<th scope="row">19 S</th>
-					<td>Remedios   <span class="badge bg-primary-subtle text-primary-emphasis">Paracuellos</span> </td>
-					<td><a href="https://maps.app.goo.gl/yYx7c26g37TXQA477">C/ de Antonia Herranz, 2</a></td>
-				</tr>
-				<tr class="table-secondary">
-					<th scope="row">20 D</th>
-					<td>Remedios   <span class="badge bg-primary-subtle text-primary-emphasis">Paracuellos</span> </td>
-					<td><a href="https://maps.app.goo.gl/yYx7c26g37TXQA477">C/ de Antonia Herranz, 2</a></td>
-				</tr>
-				<tr>
-					<th scope="row">21 L</th>
-					<td>Lojo Galván   <span class="badge bg-warning-subtle text-warning-emphasis">Ajalvir</span> </td>
-					<td><a href="https://maps.app.goo.gl/F4Rm9PURtv2Cukvd7">C/ Carlos Ruiz, 16</a></td>
-				</tr>
-				<tr>
-					<th scope="row">22 M</th>
-					<td>Remedios   <span class="badge bg-primary-subtle text-primary-emphasis">Paracuellos</span> </td>
-					<td><a href="https://maps.app.goo.gl/yYx7c26g37TXQA477">C/ de Antonia Herranz, 2</a></td>
-				</tr>
-				<tr>
-					<th scope="row">23 X</th>
-					<td>Riquelme   <span class="badge bg-primary-subtle text-primary-emphasis">Paracuellos</span> </td>
-					<td><a href="https://maps.app.goo.gl/N6hQevUZqf3SmiRK6">C/ Real, 6, local drcha.</a></td>
-				</tr>
-				<tr>
-					<th scope="row">24 J</th>
-					<td>Real Paracuellos (Gonzalez)   <span class="badge bg-primary-subtle text-primary-emphasis">Paracuellos</span> </td>
-					<td><a href="https://maps.app.goo.gl/JU7czHbRYgEUPo4i8">C/ de la Rda. de la Fuente, 1</a></td>
-				</tr>
-				<tr>
-					<th scope="row">25 V</th>
-					<td>F4 Otero   <span class="badge bg-primary-subtle text-primary-emphasis">Paracuellos</span> </td>
-					<td><a href="https://maps.app.goo.gl/JhzuaSRuhsvBv3EM9">C/ Quevedo s/n Local nº4</a></td>
-				</tr>
-				<tr class="table-secondary">
-					<th scope="row">26 S</th>
-					<td>F4 Otero   <span class="badge bg-primary-subtle text-primary-emphasis">Paracuellos</span> </td>
-					<td><a href="https://maps.app.goo.gl/JhzuaSRuhsvBv3EM9">C/ Quevedo s/n Local nº4</a></td>
-				</tr>
-				<tr class="table-secondary">
-					<th scope="row">27 D</th>
-					<td>F4 Otero   <span class="badge bg-primary-subtle text-primary-emphasis">Paracuellos</span> </td>
-					<td><a href="https://maps.app.goo.gl/JhzuaSRuhsvBv3EM9">C/ Quevedo s/n Local nº4</a></td>
-				</tr>
-				<tr>
-					<th scope="row">28 L</th>
-					<td>Petrirena   <span class="badge bg-success-subtle text-success-emphasis">Daganzo</span> </td>
-					<td><a href="https://maps.app.goo.gl/Y6MSbWyaTWhk3g936">Camino Ancho, 13</a></td>
-				</tr>
-				<tr>
-					<th scope="row">29 M</th>
-					<td>Castellano   <span class="badge bg-success-subtle text-success-emphasis">Daganzo</span> </td>
-					<td><a href="https://maps.app.goo.gl/1sbq1K19Q8eEijuj6">C/ Algete, 4</a></td>
-				</tr>
-				<tr>
-					<th scope="row">30 X</th>
-					<td>Arango   <span class="badge bg-primary-subtle text-primary-emphasis">Paracuellos</span> </td>
-					<td><a href="https://maps.app.goo.gl/56eyXWZpfcJcBL839">C/ Quevedo, 15</a></td>
-				</tr>
+    .logo-cross {
+      width: 40px; height: 40px;
+      position: relative; flex-shrink: 0;
+    }
+    .logo-cross::before, .logo-cross::after {
+      content: ''; position: absolute;
+      background: var(--green-accent); border-radius: 3px;
+    }
+    .logo-cross::before { width: 14px; height: 40px; left: 50%; transform: translateX(-50%); }
+    .logo-cross::after  { width: 40px; height: 14px; top: 50%; transform: translateY(-50%); }
 
-			</tbody>
-		</table>
+    .logo-text { color: white; font-family: 'Syne', sans-serif; }
+    .logo-text .main { font-size: 1.1rem; font-weight: 700; letter-spacing: -0.02em; }
+    .logo-text .sub  { font-size: 0.72rem; color: var(--green-light); font-weight: 400; letter-spacing: 0.05em; text-transform: uppercase; }
 
-		<br>
-		<div class="text-end"><p>Hecho con 🫀 por un vecino de Paracuellos 🌿 </p></div>
-		<div class="text-end">Me ha sido útil, quiero <a href="https://www.buymeacoffee.com/nachoad?l=es">invitarte a un café</a> ☕️ </div>
-		<br>
-		<br>
-		<p><H3>Meses anteriores</H3></p>
-        <p>2024: <a href="/archivo/2402.html">febrero</a>, <a href="/archivo/2403.html">marzo</a>, <a href="/archivo/2404.html">abril</a>, <a href="/archivo/2405.html">mayo</a>, <a href="/archivo/2406.html">junio</a>, <a href="/archivo/2407.html">julio</a>, <a href="/archivo/2408.html">agosto</a>, septiembre, octubre, <a href="/archivo/2411.html">noviembre</a>, <a href="/archivo/2412.html">diciembre</a>.</p>
-        <p>2025: <a href="/archivo/2501.html">enero</a>, <a href="/archivo/2502.html">febrero</a>, <a href="/archivo/2503.html">marzo</a>.</p>
-        <br>
+    .header-towns { display: flex; gap: 8px; }
+    .town-badge {
+      background: rgba(255,255,255,0.1); color: var(--green-light);
+      font-size: 0.72rem; font-weight: 500;
+      padding: 4px 10px; border-radius: 20px; letter-spacing: 0.03em;
+    }
 
+    /* ─── HERO ─── */
+    .hero {
+      background: var(--green-dark);
+      padding: 0 32px 48px;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute;
+      width: 600px; height: 600px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(60,183,106,0.15) 0%, transparent 70%);
+      top: -200px; right: -100px; pointer-events: none;
+    }
 
-	</div>
+    .hero-label {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: rgba(60,183,106,0.18); border: 1px solid rgba(60,183,106,0.35);
+      color: var(--green-accent); font-size: 0.75rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      padding: 5px 14px; border-radius: 20px; margin-bottom: 24px;
+    }
 
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
-	<script async data-id="101447909" src="//static.getclicky.com/js"></script>
-	<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101447909ns.gif" /></p></noscript>
-	  
-  </body>
+    .pulse-dot {
+      width: 7px; height: 7px;
+      background: var(--green-accent); border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: 0.4; transform: scale(0.7); }
+    }
+
+    .hero-content {
+      display: grid; grid-template-columns: 1fr auto;
+      gap: 24px; align-items: end; max-width: 900px;
+    }
+
+    .hero-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 800; color: white;
+      line-height: 1.1; letter-spacing: -0.03em;
+    }
+    .hero-title span { color: var(--green-accent); }
+
+    .hero-pharmacy-card {
+      background: var(--green-accent);
+      border-radius: var(--radius);
+      padding: 20px 24px; min-width: 280px;
+      position: relative; overflow: hidden;
+    }
+    .hero-pharmacy-card::before {
+      content: ''; position: absolute;
+      width: 120px; height: 120px; border-radius: 50%;
+      background: rgba(255,255,255,0.12);
+      top: -40px; right: -30px;
+    }
+
+    .hero-card-label {
+      font-size: 0.72rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: rgba(10,40,20,0.75); margin-bottom: 6px;
+    }
+    .hero-card-name {
+      font-family: 'Syne', sans-serif; font-size: 1.3rem;
+      font-weight: 700; color: var(--green-dark);
+      line-height: 1.2; margin-bottom: 10px;
+    }
+    .hero-card-address { font-size: 0.82rem; color: rgba(10,40,20,0.8); margin-bottom: 14px; }
+    .hero-card-hours { display: flex; gap: 8px; flex-wrap: wrap; }
+    .hours-chip {
+      background: rgba(10,40,20,0.15); color: var(--green-dark);
+      font-size: 0.7rem; font-weight: 600; padding: 3px 10px; border-radius: 20px;
+    }
+
+    .map-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--green-dark); color: white;
+      text-decoration: none; font-size: 0.78rem; font-weight: 600;
+      padding: 8px 14px; border-radius: var(--radius-sm); margin-top: 12px;
+      transition: background 0.2s;
+    }
+    .map-btn:hover { background: #0f2418; }
+
+    /* ─── INFO STRIP ─── */
+    .info-strip {
+      background: var(--surface2); border-bottom: 1px solid var(--border);
+      padding: 14px 32px; display: flex; gap: 32px; align-items: center; flex-wrap: wrap;
+    }
+    .info-item { display: flex; align-items: center; gap: 10px; font-size: 0.82rem; }
+    .info-icon {
+      width: 32px; height: 32px; background: var(--mint);
+      border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1rem;
+    }
+    .info-item strong { color: var(--green-dark); font-weight: 600; }
+    .info-item span   { color: var(--text-muted); }
+
+    /* ─── MAIN ─── */
+    main { max-width: 960px; margin: 0 auto; padding: 40px 24px 60px; }
+
+    .section-header {
+      display: flex; align-items: baseline;
+      justify-content: space-between; margin-bottom: 24px;
+    }
+    .section-title {
+      font-family: 'Syne', sans-serif; font-size: 1.5rem;
+      font-weight: 700; color: var(--green-dark); letter-spacing: -0.02em;
+    }
+    .month-tag {
+      font-size: 0.8rem; font-weight: 500; color: var(--text-muted);
+      background: var(--surface2); padding: 4px 12px;
+      border-radius: 20px; border: 1px solid var(--border);
+    }
+
+    /* ─── TABLE ─── */
+    .schedule-table {
+      width: 100%; border-collapse: separate; border-spacing: 0 6px;
+    }
+    .schedule-table thead th {
+      font-size: 0.7rem; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.08em; color: var(--text-muted); padding: 0 16px 8px; text-align: left;
+    }
+    .schedule-table tbody tr {
+      background: var(--surface); border-radius: var(--radius-sm);
+      transition: transform 0.15s, box-shadow 0.15s; cursor: default;
+    }
+    .schedule-table tbody tr:hover {
+      transform: translateY(-1px); box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+    }
+    .schedule-table tbody td { padding: 14px 16px; font-size: 0.88rem; }
+    .schedule-table tbody td:first-child { border-radius: var(--radius-sm) 0 0 var(--radius-sm); width: 80px; }
+    .schedule-table tbody td:last-child  { border-radius: 0 var(--radius-sm) var(--radius-sm) 0; }
+
+    .day-cell { display: flex; align-items: center; gap: 10px; }
+    .day-number {
+      font-family: 'Syne', sans-serif; font-size: 1.1rem;
+      font-weight: 700; color: var(--green-dark); min-width: 28px;
+    }
+    .day-name {
+      font-size: 0.7rem; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.05em; color: var(--text-muted);
+    }
+
+    tr.weekend { background: var(--weekend-bg); }
+    tr.weekend .day-name { color: var(--green-mid); }
+
+    tr.today {
+      background: var(--green-dark) !important;
+      box-shadow: 0 4px 24px rgba(26,61,43,0.3);
+      transform: scale(1.005);
+    }
+    tr.today td             { color: white; }
+    tr.today .day-number    { color: white; }
+    tr.today .day-name      { color: var(--green-light); }
+    tr.today .pharmacy-name { color: white; font-weight: 600; }
+    tr.today .town-label    { background: rgba(255,255,255,0.15); color: var(--green-light); }
+    tr.today .address-link  { color: var(--green-light); }
+
+    .today-badge {
+      font-size: 0.65rem; font-weight: 700;
+      background: var(--green-accent); color: var(--green-dark);
+      padding: 2px 7px; border-radius: 20px;
+      text-transform: uppercase; letter-spacing: 0.05em;
+    }
+
+    .pharmacy-name { font-weight: 500; color: var(--text); }
+
+    .town-label {
+      display: inline-block; font-size: 0.68rem; font-weight: 600;
+      padding: 2px 8px; border-radius: 12px; text-transform: uppercase;
+      letter-spacing: 0.04em; margin-left: 8px; vertical-align: middle;
+    }
+    .town-paracuellos { background: #e8f5ee; color: #1a6b3a; }
+    .town-daganzo     { background: #fef3e2; color: #9a6200; }
+    .town-ajalvir     { background: #e8eeff; color: #2244a8; }
+
+    .address-link {
+      color: var(--green-mid); text-decoration: none; font-size: 0.84rem;
+      display: flex; align-items: center; gap: 5px; transition: color 0.15s;
+    }
+    .address-link:hover { color: var(--green-accent); }
+    .address-link svg { flex-shrink: 0; }
+
+    /* ─── ARCHIVE ─── */
+    .archive-section { margin-top: 60px; padding-top: 40px; border-top: 1px solid var(--border); }
+    .archive-title {
+      font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700;
+      color: var(--text-muted); margin-bottom: 16px;
+      text-transform: uppercase; letter-spacing: 0.06em;
+    }
+    .archive-year { margin-bottom: 16px; }
+    .archive-year-label { font-size: 0.78rem; font-weight: 600; color: var(--text-muted); margin-bottom: 8px; }
+    .archive-links { display: flex; flex-wrap: wrap; gap: 8px; }
+    .archive-link {
+      background: var(--surface); border: 1px solid var(--border);
+      color: var(--green-mid); text-decoration: none;
+      font-size: 0.78rem; font-weight: 500;
+      padding: 5px 12px; border-radius: 8px; transition: all 0.15s;
+    }
+    .archive-link:hover { background: var(--green-dark); color: white; border-color: var(--green-dark); }
+    .archive-link.disabled { color: var(--text-muted); pointer-events: none; background: var(--surface2); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--green-dark); color: rgba(255,255,255,0.6);
+      text-align: center; padding: 28px 24px; font-size: 0.82rem;
+    }
+    footer a { color: var(--green-accent); text-decoration: none; font-weight: 500; }
+    footer a:hover { text-decoration: underline; }
+    .footer-heart { color: #e05252; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 680px) {
+      header { padding: 16px 20px; }
+      .header-towns { display: none; }
+      .hero { padding: 0 20px 36px; }
+      .hero-content { grid-template-columns: 1fr; }
+      .hero-pharmacy-card { min-width: unset; }
+      .info-strip { padding: 12px 20px; gap: 16px; }
+      main { padding: 28px 16px 48px; }
+      .schedule-table thead { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <div class="logo-cross"></div>
+    <div class="logo-text">
+      <div class="main">Farmacias de Guardia</div>
+      <div class="sub">Paracuellos · Ajalvir · Daganzo</div>
+    </div>
+  </div>
+  <div class="header-towns">
+    <span class="town-badge">Paracuellos de Jarama</span>
+    <span class="town-badge">Ajalvir</span>
+    <span class="town-badge">Daganzo</span>
+  </div>
+</header>
+
+<div class="hero">
+  <div style="padding-top: 36px; margin-bottom: 28px;">
+    <div class="hero-label">
+      <div class="pulse-dot"></div>
+      Guardia activa hoy
+    </div>
+  </div>
+  <div class="hero-content">
+    <div>
+      <h1 class="hero-title">
+        La farmacia<br>
+        de guardia de<br>
+        <span id="today-display">hoy</span>
+      </h1>
+    </div>
+    <div class="hero-pharmacy-card">
+      <div class="hero-card-label">Farmacia de guardia</div>
+      <div class="hero-card-name" id="hero-name">—</div>
+      <div class="hero-card-address" id="hero-address">—</div>
+      <div class="hero-card-hours">
+        <span class="hours-chip" id="hero-hours">—</span>
+      </div>
+      <a class="map-btn" id="hero-map" href="#" target="_blank">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        Ver en el mapa
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="info-strip">
+  <div class="info-item">
+    <div class="info-icon">🌙</div>
+    <div><strong>Días laborables</strong><span> · de 23:00 a 9:30 del día siguiente</span></div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon">☀️</div>
+    <div><strong>Domingos y festivos</strong><span> · de 9:30 a 9:30 del día siguiente (24h)</span></div>
+  </div>
+</div>
+
+<main>
+  <div class="section-header">
+    <h2 class="section-title">Calendario de guardias</h2>
+    <span class="month-tag">Marzo 2026</span>
+  </div>
+
+  <table class="schedule-table" id="schedule-table">
+    <thead>
+      <tr>
+        <th>Día</th>
+        <th>Farmacia</th>
+        <th>Dirección</th>
+      </tr>
+    </thead>
+    <tbody id="schedule-body"></tbody>
+  </table>
+
+  <div class="archive-section">
+    <div class="archive-title">Meses anteriores</div>
+    <div class="archive-year">
+      <div class="archive-year-label">2024</div>
+      <div class="archive-links">
+        <a class="archive-link" href="/archivo/2402.html">Feb</a>
+        <a class="archive-link" href="/archivo/2403.html">Mar</a>
+        <a class="archive-link" href="/archivo/2404.html">Abr</a>
+        <a class="archive-link" href="/archivo/2405.html">May</a>
+        <a class="archive-link" href="/archivo/2406.html">Jun</a>
+        <a class="archive-link" href="/archivo/2407.html">Jul</a>
+        <a class="archive-link" href="/archivo/2408.html">Ago</a>
+        <a class="archive-link disabled">Sep</a>
+        <a class="archive-link disabled">Oct</a>
+        <a class="archive-link" href="/archivo/2411.html">Nov</a>
+        <a class="archive-link" href="/archivo/2412.html">Dic</a>
+      </div>
+    </div>
+    <div class="archive-year">
+      <div class="archive-year-label">2025</div>
+      <div class="archive-links">
+        <a class="archive-link" href="/archivo/2501.html">Ene</a>
+        <a class="archive-link" href="/archivo/2502.html">Feb</a>
+        <a class="archive-link" href="/archivo/2503.html">Mar</a>
+        <a class="archive-link" href="/archivo/2504.html">Abr</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>Hecho con <span class="footer-heart">❤️</span> por un vecino de Paracuellos 🌿</p>
+  <p style="margin-top: 8px;">
+    ¿Te ha sido útil?
+    <a href="https://www.buymeacoffee.com/nachoad?l=es" target="_blank">☕ Invítame a un café</a>
+  </p>
+</footer>
+
+<script>
+  const schedule = [
+    { day:  1, dow: 'D', name: 'Remedios',             town: 'paracuellos', address: 'C/ de Antonia Herranz, 2',                       map: 'https://maps.app.goo.gl/yYx7c26g37TXQA477' },
+    { day:  2, dow: 'L', name: 'F4 Otero',             town: 'paracuellos', address: 'C/ Quevedo s/n Local nº4',                       map: 'https://maps.app.goo.gl/JhzuaSRuhsvBv3EM9' },
+    { day:  3, dow: 'M', name: 'Riquelme',             town: 'paracuellos', address: 'C/ Real, 6, local drcha.',                       map: 'https://maps.app.goo.gl/N6hQevUZqf3SmiRK6' },
+    { day:  4, dow: 'X', name: 'Castellano',           town: 'daganzo',     address: 'C/ Algete, 4',                                   map: 'https://maps.app.goo.gl/1sbq1K19Q8eEijuj6' },
+    { day:  5, dow: 'J', name: 'Rodríguez',            town: 'paracuellos', address: 'C.C. Miramadrid, P.º de las Camelias, s/n',      map: 'https://maps.app.goo.gl/Smiz9zX78ZwxNSiu5' },
+    { day:  6, dow: 'V', name: 'Riquelme',             town: 'paracuellos', address: 'C/ Real, 6, local drcha.',                       map: 'https://maps.app.goo.gl/N6hQevUZqf3SmiRK6' },
+    { day:  7, dow: 'S', name: 'Lojo Galván',          town: 'ajalvir',     address: 'C/ Carlos Ruiz, 16',                             map: 'https://maps.app.goo.gl/F4Rm9PURtv2Cukvd7' },
+    { day:  8, dow: 'D', name: 'Lojo Galván',          town: 'ajalvir',     address: 'C/ Carlos Ruiz, 16',                             map: 'https://maps.app.goo.gl/F4Rm9PURtv2Cukvd7' },
+    { day:  9, dow: 'L', name: 'Real (González)',      town: 'paracuellos', address: 'C/ de la Rda. de la Fuente, 1',                  map: 'https://maps.app.goo.gl/JU7czHbRYgEUPo4i8' },
+    { day: 10, dow: 'M', name: 'Arango',               town: 'paracuellos', address: 'C/ Quevedo, 15',                                 map: 'https://maps.app.goo.gl/56eyXWZpfcJcBL839' },
+    { day: 11, dow: 'X', name: 'Petrirena',            town: 'daganzo',     address: 'Camino Ancho, 13',                               map: 'https://maps.app.goo.gl/Y6MSbWyaTWhk3g936' },
+    { day: 12, dow: 'J', name: 'F4 Otero',             town: 'paracuellos', address: 'C/ Quevedo s/n Local nº4',                       map: 'https://maps.app.goo.gl/JhzuaSRuhsvBv3EM9' },
+    { day: 13, dow: 'V', name: 'Lojo Galván',          town: 'ajalvir',     address: 'C/ Carlos Ruiz, 16',                             map: 'https://maps.app.goo.gl/F4Rm9PURtv2Cukvd7' },
+    { day: 14, dow: 'S', name: 'Riquelme',             town: 'paracuellos', address: 'C/ Real, 6, local drcha.',                       map: 'https://maps.app.goo.gl/N6hQevUZqf3SmiRK6' },
+    { day: 15, dow: 'D', name: 'Riquelme',             town: 'paracuellos', address: 'C/ Real, 6, local drcha.',                       map: 'https://maps.app.goo.gl/N6hQevUZqf3SmiRK6' },
+    { day: 16, dow: 'L', name: 'Lojo Galván',          town: 'ajalvir',     address: 'C/ Carlos Ruiz, 16',                             map: 'https://maps.app.goo.gl/F4Rm9PURtv2Cukvd7' },
+    { day: 17, dow: 'M', name: 'Remedios',             town: 'paracuellos', address: 'C/ de Antonia Herranz, 2',                       map: 'https://maps.app.goo.gl/yYx7c26g37TXQA477' },
+    { day: 18, dow: 'X', name: 'Riquelme',             town: 'paracuellos', address: 'C/ Real, 6, local drcha.',                       map: 'https://maps.app.goo.gl/N6hQevUZqf3SmiRK6' },
+    { day: 19, dow: 'J', name: 'Petrirena',            town: 'daganzo',     address: 'Camino Ancho, 13',                               map: 'https://maps.app.goo.gl/Y6MSbWyaTWhk3g936' },
+    { day: 20, dow: 'V', name: 'Rodríguez',            town: 'paracuellos', address: 'C.C. Miramadrid, P.º de las Camelias, s/n',      map: 'https://maps.app.goo.gl/Smiz9zX78ZwxNSiu5' },
+    { day: 21, dow: 'S', name: 'F4 Otero',             town: 'paracuellos', address: 'C/ Quevedo s/n Local nº4',                       map: 'https://maps.app.goo.gl/JhzuaSRuhsvBv3EM9' },
+    { day: 22, dow: 'D', name: 'F4 Otero',             town: 'paracuellos', address: 'C/ Quevedo s/n Local nº4',                       map: 'https://maps.app.goo.gl/JhzuaSRuhsvBv3EM9' },
+    { day: 23, dow: 'L', name: 'Castellano',           town: 'daganzo',     address: 'C/ Algete, 4',                                   map: 'https://maps.app.goo.gl/1sbq1K19Q8eEijuj6' },
+    { day: 24, dow: 'M', name: 'Riquelme',             town: 'paracuellos', address: 'C/ Real, 6, local drcha.',                       map: 'https://maps.app.goo.gl/N6hQevUZqf3SmiRK6' },
+    { day: 25, dow: 'X', name: 'F4 Otero',             town: 'paracuellos', address: 'C/ Quevedo s/n Local nº4',                       map: 'https://maps.app.goo.gl/JhzuaSRuhsvBv3EM9' },
+    { day: 26, dow: 'J', name: 'Petrirena',            town: 'daganzo',     address: 'Camino Ancho, 13',                               map: 'https://maps.app.goo.gl/Y6MSbWyaTWhk3g936' },
+    { day: 27, dow: 'V', name: 'Remedios',             town: 'paracuellos', address: 'C/ de Antonia Herranz, 2',                       map: 'https://maps.app.goo.gl/yYx7c26g37TXQA477' },
+    { day: 28, dow: 'S', name: 'Real (González)',      town: 'paracuellos', address: 'C/ de la Rda. de la Fuente, 1',                  map: 'https://maps.app.goo.gl/JU7czHbRYgEUPo4i8' },
+    { day: 29, dow: 'D', name: 'Real (González)',      town: 'paracuellos', address: 'C/ de la Rda. de la Fuente, 1',                  map: 'https://maps.app.goo.gl/JU7czHbRYgEUPo4i8' },
+    { day: 30, dow: 'L', name: 'Lojo Galván',          town: 'ajalvir',     address: 'C/ Carlos Ruiz, 16',                             map: 'https://maps.app.goo.gl/F4Rm9PURtv2Cukvd7' },
+    { day: 31, dow: 'M', name: 'Arango',               town: 'paracuellos', address: 'C/ Quevedo, 15',                                 map: 'https://maps.app.goo.gl/56eyXWZpfcJcBL839' },
+  ];
+
+  const townLabel = { paracuellos: 'Paracuellos', daganzo: 'Daganzo', ajalvir: 'Ajalvir' };
+  const dayNames  = { L:'Lunes', M:'Martes', X:'Miércoles', J:'Jueves', V:'Viernes', S:'Sábado', D:'Domingo' };
+  const isWeekend = d => d === 'S' || d === 'D';
+
+  const now = new Date();
+  const todayDay   = now.getDate();
+  const todayMonth = now.getMonth();  // 0-indexed; March = 2
+  const isCurrentMonth = (now.getFullYear() === 2026 && todayMonth === 2);
+
+  // Hero card
+  const todayEntry = isCurrentMonth ? schedule.find(e => e.day === todayDay) : null;
+  const heroEntry  = todayEntry || schedule[0];
+  document.getElementById('today-display').textContent = todayEntry
+    ? `hoy, ${todayDay} de marzo`
+    : 'marzo de 2026';
+  document.getElementById('hero-name').textContent    = `Farmacia ${heroEntry.name}`;
+  document.getElementById('hero-address').textContent = `${heroEntry.address} · ${townLabel[heroEntry.town]}`;
+  document.getElementById('hero-map').href            = heroEntry.map;
+  document.getElementById('hero-hours').textContent   = isWeekend(heroEntry.dow)
+    ? '9:30 – 9:30 del día siguiente (24h)'
+    : '23:00 – 9:30 del día siguiente';
+
+  // Build table
+  const tbody  = document.getElementById('schedule-body');
+  const pinSVG = `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>`;
+
+  schedule.forEach(entry => {
+    const isToday = isCurrentMonth && entry.day === todayDay;
+    const wknd    = isWeekend(entry.dow);
+    const tr      = document.createElement('tr');
+    if (isToday)    tr.classList.add('today');
+    else if (wknd)  tr.classList.add('weekend');
+
+    tr.innerHTML = `
+      <td>
+        <div class="day-cell">
+          <span class="day-number">${entry.day}</span>
+          <span class="day-name">${dayNames[entry.dow]}</span>
+          ${isToday ? '<span class="today-badge">Hoy</span>' : ''}
+        </div>
+      </td>
+      <td>
+        <span class="pharmacy-name">Farmacia ${entry.name}</span>
+        <span class="town-label town-${entry.town}">${townLabel[entry.town]}</span>
+      </td>
+      <td>
+        <a class="address-link" href="${entry.map}" target="_blank">
+          ${pinSVG}${entry.address}
+        </a>
+      </td>
+    `;
+    tbody.appendChild(tr);
+    if (isToday) setTimeout(() => tr.scrollIntoView({ behavior: 'smooth', block: 'center' }), 400);
+  });
+</script>
+
+<script async data-id="101447909" src="//static.getclicky.com/js"></script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101447909ns.gif"/></p></noscript>
+</body>
 </html>
