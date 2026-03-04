@@ -308,17 +308,24 @@
         border-radius: var(--radius-sm);
         padding: 12px 14px;
         margin-bottom: 6px;
+        overflow: hidden;
       }
 
       .schedule-table tbody td {
         padding: 2px 0;
         border-radius: 0 !important;
         font-size: 0.85rem;
+        background: transparent !important;
       }
+
+      /* Weekend: color on the tr (card), not on individual td */
+      tr.weekend { background: #d4eedf; }
+
+      /* Today: color on the tr (card), not on individual td */
+      tr.today { background: var(--green-dark) !important; }
 
       .day-cell { margin-bottom: 4px; }
       .day-number { font-size: 1rem; }
-
       .address-link { margin-top: 2px; }
     }
   </style>
