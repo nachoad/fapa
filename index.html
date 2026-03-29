@@ -8,7 +8,7 @@
   <title>Farmacias de Guardia en Paracuellos de Jarama, Ajalvir y Daganzo – Marzo 2026</title>
   <meta name="description" content="Consulta qué farmacia está de guardia hoy en Paracuellos de Jarama, Ajalvir y Daganzo. Calendario completo de marzo 2026 con direcciones y enlace a Google Maps.">
   <meta name="keywords" content="farmacia de guardia Paracuellos, farmacia de guardia Ajalvir, farmacia de guardia Daganzo, farmacias guardia Paracuellos de Jarama, farmacia abierta hoy Paracuellos, farmacia turno noche Paracuellos, farmacia domingo Paracuellos, farmacia festivo Paracuellos, marzo 2026">
-  <meta name="author" content="Nacho, vecino de Paracuellos de Jarama">
+  <meta name="author" content="Nacho">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://farmaciasdeguardiaparacuellos.es/">
   <link rel="icon" type="image/x-icon" href="/cruz.png">
@@ -591,17 +591,24 @@
   const isCurrentMonth = (now.getFullYear() === 2026 && todayMonth === 2);
 
   // Hero card
-  const todayEntry = isCurrentMonth ? schedule.find(e => e.day === todayDay) : null;
-  const heroEntry  = todayEntry || schedule[0];
-  document.getElementById('today-display').textContent = todayEntry
-    ? `hoy, ${todayDay} de marzo`
-    : 'marzo de 2026';
-  document.getElementById('hero-name').textContent    = `Farmacia ${heroEntry.name}`;
-  document.getElementById('hero-address').textContent = `${heroEntry.address} · ${townLabel[heroEntry.town]}`;
-  document.getElementById('hero-map').href            = heroEntry.map;
-  document.getElementById('hero-hours').textContent   = isWeekend(heroEntry.dow)
-    ? '9:30 – 9:30 del día siguiente (24h)'
-    : '23:00 – 9:30 del día siguiente';
+  const todayEntry = isCurrentMonth ? (schedule.find(e => e.day === todayDay) || null) : null;
+
+  if (todayEntry) {
+    document.getElementById('today-display').textContent = `hoy, ${todayDay} de marzo`;
+    document.getElementById('hero-name').textContent     = `Farmacia ${todayEntry.name}`;
+    document.getElementById('hero-address').textContent  = `${todayEntry.address} · ${townLabel[todayEntry.town]}`;
+    document.getElementById('hero-map').href             = todayEntry.map;
+    document.getElementById('hero-hours').textContent    = isWeekend(todayEntry.dow)
+      ? '9:30 – 9:30 del día siguiente (24h)'
+      : '23:00 – 9:30 del día siguiente';
+  } else {
+    // Hoy no está en esta tabla: ocultar la tarjeta y el indicador de guardia activa
+    document.getElementById('today-display').textContent = 'marzo de 2026';
+    const heroLabel = document.querySelector('.hero-label');
+    if (heroLabel) heroLabel.style.display = 'none';
+    const heroCard = document.querySelector('.hero-pharmacy-card');
+    if (heroCard) heroCard.style.display = 'none';
+  }
 
   // Build table
   const tbody  = document.getElementById('schedule-body');
