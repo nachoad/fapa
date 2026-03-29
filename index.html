@@ -292,11 +292,13 @@
       letter-spacing: 0.05em; color: var(--text-muted);
     }
 
-    tr.weekend td { background: #d4eedf; }
-    tr.weekend .day-number { color: var(--green-mid); }
-    tr.weekend .day-name { color: var(--green-mid); font-weight: 700; }
+    tr.weekend              { background: #d4eedf; }
+    tr.weekend td           { background: #d4eedf; }
+    tr.weekend .day-number  { color: var(--green-mid); }
+    tr.weekend .day-name    { color: var(--green-mid); font-weight: 700; }
 
     tr.today {
+      background: var(--green-dark);
       box-shadow: 0 4px 24px rgba(26,61,43,0.3);
       transform: scale(1.005);
     }
