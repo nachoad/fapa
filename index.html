@@ -405,6 +405,7 @@
       }
 
       /* Apply background to the tr card, not individual td */
+      tr:not(.weekend):not(.today) { background: var(--surface) !important; }
       tr.weekend { background: #d4eedf !important; }
       tr.today { background: var(--green-dark) !important; }
 
