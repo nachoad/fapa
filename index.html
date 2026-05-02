@@ -318,12 +318,12 @@
       text-transform: uppercase; letter-spacing: 0.05em;
     }
 
-    .pharmacy-name { font-weight: 500; color: var(--text); }
+    .pharmacy-name { font-weight: 600; color: var(--text); font-size: 1rem; }
 
     .town-label {
       display: inline-block; font-size: 0.68rem; font-weight: 600;
       padding: 2px 8px; border-radius: 12px; text-transform: uppercase;
-      letter-spacing: 0.04em; margin-left: 8px; vertical-align: middle;
+      letter-spacing: 0.04em; vertical-align: middle;
     }
     .town-paracuellos { background: #e8f5ee; color: #1a6b3a; }
     .town-daganzo     { background: #fef3e2; color: #9a6200; }
@@ -331,10 +331,13 @@
 
     .address-link {
       color: var(--green-mid); text-decoration: none; font-size: 0.84rem;
-      display: flex; align-items: center; gap: 5px; transition: color 0.15s;
+      display: inline-flex; align-items: center; gap: 5px; transition: color 0.15s;
     }
     .address-link:hover { color: var(--green-accent); }
     .address-link svg { flex-shrink: 0; }
+    .address-row {
+      display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+    }
 
     /* ─── ARCHIVE ─── */
     .archive-section { margin-top: 60px; padding-top: 40px; border-top: 1px solid var(--border); }
@@ -632,12 +635,14 @@
       </td>
       <td>
         <span class="pharmacy-name">Farmacia ${entry.name}</span>
-        <span class="town-label town-${entry.town}">${townLabel[entry.town]}</span>
       </td>
       <td>
-        <a class="address-link" href="${entry.map}" target="_blank">
-          ${pinSVG}${entry.address}
-        </a>
+        <div class="address-row">
+          <a class="address-link" href="${entry.map}" target="_blank">
+            ${pinSVG}${entry.address}
+          </a>
+          <span class="town-label town-${entry.town}">${townLabel[entry.town]}</span>
+        </div>
       </td>
     `;
     tbody.appendChild(tr);
