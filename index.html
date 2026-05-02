@@ -63,7 +63,7 @@
         "name": "¿En qué horario abren las farmacias de guardia en Paracuellos?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Los días laborables el turno de guardia es de 23:00 a 9:30 del día siguiente. Los domingos y festivos la guardia dura 24 horas, de 9:30 a 9:30 del día siguiente."
+          "text": "La farmacia de guardia cubre desde las 9:00 del día marcado hasta las 9:00 del día siguiente."
         }
       },
       {
@@ -467,11 +467,7 @@
 <section class="info-strip" aria-label="Horarios de guardia">
   <div class="info-item">
     <div class="info-icon" aria-hidden="true">💊</div>
-    <div><strong>Días laborables</strong><span> · de 23:00 a 9:30 del día siguiente</span></div>
-  </div>
-  <div class="info-item">
-    <div class="info-icon" aria-hidden="true">🔔</div>
-    <div><strong>Domingos y festivos</strong><span> · de 9:30 a 9:30 del día siguiente (24h)</span></div>
+    <div><strong>Guardia</strong><span> · de 9:00 del día marcado a 9:00 del día siguiente</span></div>
   </div>
 </section>
 
@@ -588,9 +584,7 @@
     document.getElementById('hero-name').textContent     = `Farmacia ${todayEntry.name}`;
     document.getElementById('hero-address').textContent  = `${todayEntry.address} · ${townLabel[todayEntry.town]}`;
     document.getElementById('hero-map').href             = todayEntry.map;
-    document.getElementById('hero-hours').textContent    = isWeekend(todayEntry.dow)
-      ? '9:30 – 9:30 del día siguiente (24h)'
-      : '23:00 – 9:30 del día siguiente';
+    document.getElementById('hero-hours').textContent    = '9:00 – 9:00 del día siguiente';
   } else {
     // Hoy no está en esta tabla: ocultar la tarjeta y el indicador de guardia activa
     document.getElementById('today-display').textContent = 'mayo de 2026';
