@@ -1,0 +1,27 @@
+name: Claude Web Builder
+on:
+  issues:
+    types: [labeled]
+
+jobs:
+  claude:
+    if: github.event.label.name == 'claude-task'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: anthropics/claude-code-action@beta
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          prompt: |
+            Lee el título y la descripción de este issue como una tarea de desarrollo web.
+            Implementa los cambios en el código del repositorio (HTML, CSS, JS o lo que aplique).
+            Si necesitas editar varios archivos, hazlo todo en el mismo conjunto de cambios.
+            Crea un pull request con los cambios para que pueda revisarlos antes de mergear.
+            No hagas commit directo a main.
