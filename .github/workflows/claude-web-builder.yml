@@ -20,7 +20,7 @@ jobs:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
           prompt: |
-            Lee el título y la descripción de este issue como una tarea de desarrollo web.
+            Lee el título y la descripción del issue #${{ github.event.issue.number }} como una tarea de desarrollo web.
             Implementa los cambios en el código del repositorio (HTML, CSS, JS o lo que aplique).
             Si necesitas editar varios archivos, hazlo todo en el mismo conjunto de cambios.
             Crea un pull request con los cambios para que pueda revisarlos antes de mergear.
