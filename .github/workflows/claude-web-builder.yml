@@ -10,7 +10,8 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
-      issues: read
+      issues: write
+      id-token: write
     steps:
       - uses: actions/checkout@v4
         with:
@@ -23,5 +24,7 @@ jobs:
             Lee el título y la descripción del issue #${{ github.event.issue.number }} como una tarea de desarrollo web.
             Implementa los cambios en el código del repositorio (HTML, CSS, JS o lo que aplique).
             Si necesitas editar varios archivos, hazlo todo en el mismo conjunto de cambios.
-            Crea un pull request con los cambios para que pueda revisarlos antes de mergear.
+            Crea una rama nueva, haz commit de los cambios, y abre un pull request contra main para que pueda revisarlo antes de mergear.
             No hagas commit directo a main.
+          claude_args: |
+            --allowedTools "Bash(git:*),Bash(gh pr:*),Edit,Read,Write"
