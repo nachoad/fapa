@@ -126,7 +126,7 @@
       border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
-    .logo { display: flex; align-items: center; gap: 14px; }
+    .logo { display: flex; align-items: center; gap: 14px; text-decoration: none; color: inherit; }
 
     .logo-cross {
       width: 40px; height: 40px;
@@ -148,6 +148,10 @@
       background: rgba(255,255,255,0.1); color: var(--green-light);
       font-size: 0.72rem; font-weight: 500;
       padding: 4px 10px; border-radius: 20px; letter-spacing: 0.03em;
+      transition: background 0.2s, color 0.2s;
+    }
+    .town-badge.on-duty {
+      background: var(--green-accent); color: var(--green-dark); font-weight: 700;
     }
 
     /* ─── HERO ─── */
@@ -421,18 +425,18 @@
 <body>
 
 <header role="banner">
-  <div class="logo">
+  <a class="logo" href="/" aria-label="Ir a la página principal">
     <div class="logo-cross" aria-hidden="true"></div>
     <div class="logo-text">
       <div class="main">Farmacias de Guardia</div>
       <div class="sub">Paracuellos · Ajalvir · Daganzo</div>
     </div>
-  </div>
+  </a>
   <nav aria-label="Municipios">
     <div class="header-towns">
-      <span class="town-badge">Paracuellos de Jarama</span>
-      <span class="town-badge">Ajalvir</span>
-      <span class="town-badge">Daganzo</span>
+      <span class="town-badge" data-town="paracuellos">Paracuellos de Jarama</span>
+      <span class="town-badge" data-town="ajalvir">Ajalvir</span>
+      <span class="town-badge" data-town="daganzo">Daganzo</span>
     </div>
   </nav>
 </header>
@@ -608,6 +612,9 @@
     document.getElementById('hero-address').textContent  = `${todayEntry.address} · ${townLabel[todayEntry.town]}`;
     document.getElementById('hero-map').href             = todayEntry.map;
     document.getElementById('hero-hours').textContent    = '9:00 – 9:00 del día siguiente';
+
+    const onDutyBadge = document.querySelector(`.town-badge[data-town="${todayEntry.town}"]`);
+    if (onDutyBadge) onDutyBadge.classList.add('on-duty');
   } else {
     // Hoy no está en esta tabla: ocultar la tarjeta y el indicador de guardia activa
     document.getElementById('today-display').textContent = 'agosto de 2026';
