@@ -395,7 +395,7 @@
 
     /* ─── SPONSOR ROW (dentro de la tabla) ─── */
     .schedule-table tbody tr.sponsor-row td {
-      padding-top: 24px; padding-bottom: 24px;
+      padding-top: 8px; padding-bottom: 8px; vertical-align: middle;
       background: #fff8db; border-top: 1px dotted #c9a227; border-bottom: 1px dotted #c9a227;
     }
     .schedule-table tbody tr.sponsor-row td:first-child { text-align: center; border-left: 1px dotted #c9a227; }
@@ -490,17 +490,26 @@
       .day-number { font-size: 1rem; }
       .address-link { margin-top: 2px; }
 
-      /* Sponsor row: mostrar como una única tarjeta, no 3 celdas separadas */
+      /* Sponsor row: icono + texto en línea, para ocupar poco alto */
       .schedule-table tbody tr.sponsor-row {
-        display: flex; flex-direction: column; align-items: center; text-align: center;
-        gap: 8px; padding: 20px 16px; border-radius: var(--radius-sm);
+        display: flex; flex-direction: row; align-items: center; text-align: left;
+        gap: 10px; padding: 8px 14px; border-radius: var(--radius-sm);
         border: 1px dotted #c9a227; background: #fff8db !important;
       }
       .schedule-table tbody tr.sponsor-row td,
       .schedule-table tbody tr.sponsor-row td:first-child,
       .schedule-table tbody tr.sponsor-row td:last-child {
-        display: block; width: 100%; padding: 0; background: transparent; border: none;
+        display: block; width: auto; padding: 0; background: transparent; border: none;
       }
+      .schedule-table tbody tr.sponsor-row td:first-child { flex-shrink: 0; }
+      .schedule-table tbody tr.sponsor-row td:nth-child(2) { flex: 1; min-width: 0; }
+      .schedule-table tbody tr.sponsor-row td:last-child { flex-shrink: 0; }
+      .schedule-table tbody tr.sponsor-row .sponsor-row-icon { width: 28px; height: 28px; font-size: 1rem; }
+      .schedule-table tbody tr.sponsor-row .sponsor-row-text {
+        display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+        font-size: 0.82rem;
+      }
+      .schedule-table tbody tr.sponsor-row .sponsor-row-cta { white-space: nowrap; font-size: 0.78rem; }
     }
   </style>
 </head>
@@ -762,6 +771,13 @@
     tbody.appendChild(tr);
     if (isToday) setTimeout(() => tr.scrollIntoView({ behavior: 'smooth', block: 'center' }), 400);
   });
+
+  // Ajustar el alto del banner de patrocinio a 1.2x el alto real de una fila normal
+  const sponsorRowEl = tbody.querySelector('tr.sponsor-row');
+  const normalRowEl  = tbody.querySelector('tr:not(.sponsor-row)');
+  if (sponsorRowEl && normalRowEl) {
+    sponsorRowEl.style.minHeight = `${Math.round(normalRowEl.offsetHeight * 1.2)}px`;
+  }
 </script>
 
 <script async data-id="101447909" src="//static.getclicky.com/js"></script>
