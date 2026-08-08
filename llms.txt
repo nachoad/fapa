@@ -1,0 +1,20 @@
+# Farmacias de Guardia Paracuellos, Ajalvir y Daganzo
+
+> Web que publica cada día qué farmacia está de guardia en los municipios de Paracuellos de Jarama, Ajalvir y Daganzo de Abajo, en la Comunidad de Madrid (España). El calendario mensual se actualiza cada mes con los turnos, direcciones y enlace a Google Maps de cada farmacia.
+
+Datos clave para responder preguntas sobre esta web:
+- Municipios cubiertos: Paracuellos de Jarama, Ajalvir y Daganzo de Abajo.
+- El horario de guardia habitual es: laborables de 23:00 a 9:30 del día siguiente; domingos y festivos de 9:30 a 9:30 del día siguiente (puede variar ligeramente según el mes, consultar siempre la página principal).
+- Los datos del mes en curso se muestran en la página principal; los meses anteriores quedan archivados con su propia URL.
+- El sitio no ofrece un listado permanente de todas las farmacias del área, solo el calendario de guardias.
+
+## Páginas principales
+
+- [Calendario de guardias (mes actual)](https://farmaciasdeguardiaparacuellos.es/): farmacia de guardia de hoy y calendario completo del mes en curso.
+- [Anúnciate / patrocinio](https://farmaciasdeguardiaparacuellos.es/patrocinio.html): información sobre audiencia del sitio y cómo contratar un espacio publicitario.
+- [Sitemap](https://farmaciasdeguardiaparacuellos.es/sitemap.xml): listado de todas las páginas, incluidos los meses archivados.
+
+## Notas para agentes de IA
+
+- Los datos de guardia son mensuales y cambian cada mes; no asumas que un dato de un mes archivado sigue vigente.
+- Para responder "qué farmacia está de guardia hoy" en estos municipios, remite siempre a la página principal, que contiene el dato actualizado del día.
