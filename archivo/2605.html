@@ -246,6 +246,28 @@
     .info-item strong { color: var(--green-dark); font-weight: 600; }
     .info-item span   { color: var(--text-muted); }
 
+    /* ─── SPONSOR BOX ─── */
+    .sponsor-box {
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center; gap: 14px;
+      background: #fff8db; border: 1px dotted #c9a227;
+      border-radius: var(--radius); padding: 48px 24px;
+      margin: 32px 0 40px; text-decoration: none; color: inherit;
+      transition: border-color .2s, background .2s;
+    }
+    .sponsor-box:hover { background: #fff2b8; border-color: #a3801d; }
+    .sponsor-icon {
+      width: 52px; height: 52px; background: #ffefb0; border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem; flex-shrink: 0;
+    }
+    .sponsor-text { font-size: 1.2rem; font-weight: 400; color: #8a6d10; max-width: 480px; }
+    .sponsor-cta { font-size: 1rem; font-weight: 400; color: #8a6d10; }
+    @media (max-width: 680px) {
+      .sponsor-box { padding: 36px 20px; }
+      .sponsor-text { font-size: 1.05rem; }
+    }
+
     /* ─── MAIN ─── */
     main { max-width: 960px; margin: 0 auto; padding: 40px 24px 60px; }
 
@@ -475,6 +497,12 @@
 </section>
 
 <main>
+  <a class="sponsor-box" href="https://farmaciasdeguardiaparacuellos.es/patrocinio.html" aria-label="Información para patrocinadores">
+    <div class="sponsor-icon" aria-hidden="true">📣</div>
+    <div class="sponsor-text">¿Quieres que tu marca, producto o servicio aparezca en esta web?</div>
+    <span class="sponsor-cta">Más información →</span>
+  </a>
+
   <div class="section-header">
     <h2 class="section-title">Calendario de guardias</h2>
     <span class="month-tag">Mayo 2026</span>

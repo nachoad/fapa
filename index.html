@@ -250,6 +250,28 @@
     .info-item strong { color: var(--green-dark); font-weight: 600; }
     .info-item span   { color: var(--text-muted); }
 
+    /* ─── SPONSOR BOX ─── */
+    .sponsor-box {
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center; gap: 14px;
+      background: #fff8db; border: 1px dotted #c9a227;
+      border-radius: var(--radius); padding: 48px 24px;
+      margin: 32px 0 40px; text-decoration: none; color: inherit;
+      transition: border-color .2s, background .2s;
+    }
+    .sponsor-box:hover { background: #fff2b8; border-color: #a3801d; }
+    .sponsor-icon {
+      width: 52px; height: 52px; background: #ffefb0; border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem; flex-shrink: 0;
+    }
+    .sponsor-text { font-size: 1.2rem; font-weight: 400; color: #8a6d10; max-width: 480px; }
+    .sponsor-cta { font-size: 1rem; font-weight: 400; color: #8a6d10; }
+    @media (max-width: 680px) {
+      .sponsor-box { padding: 36px 20px; }
+      .sponsor-text { font-size: 1.05rem; }
+    }
+
     /* ─── MAIN ─── */
     main { max-width: 960px; margin: 0 auto; padding: 40px 24px 60px; }
 
@@ -343,6 +365,26 @@
       display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
     }
 
+    /* ─── SPONSOR ROW (dentro de la tabla) ─── */
+    .schedule-table tbody tr.sponsor-row td {
+      padding-top: 24px; padding-bottom: 24px;
+      background: #fff8db; border-top: 1px dotted #c9a227; border-bottom: 1px dotted #c9a227;
+    }
+    .schedule-table tbody tr.sponsor-row td:first-child { text-align: center; border-left: 1px dotted #c9a227; }
+    .schedule-table tbody tr.sponsor-row td:last-child { border-right: 1px dotted #c9a227; }
+    .schedule-table tbody tr.sponsor-row { cursor: pointer; }
+    .sponsor-row-icon {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 36px; height: 36px; background: #ffefb0; border-radius: 10px;
+      font-size: 1.2rem;
+    }
+    .sponsor-row-text { font-size: 0.95rem; font-weight: 400; color: #8a6d10; }
+    .sponsor-row-cta {
+      color: #8a6d10; text-decoration: none; font-weight: 400; font-size: 0.88rem;
+      transition: color 0.15s;
+    }
+    .sponsor-row-cta:hover { color: #a3801d; }
+
     /* ─── ARCHIVE ─── */
     .archive-section { margin-top: 60px; padding-top: 40px; border-top: 1px solid var(--border); }
     .archive-title {
@@ -419,6 +461,18 @@
       .day-cell { margin-bottom: 4px; }
       .day-number { font-size: 1rem; }
       .address-link { margin-top: 2px; }
+
+      /* Sponsor row: mostrar como una única tarjeta, no 3 celdas separadas */
+      .schedule-table tbody tr.sponsor-row {
+        display: flex; flex-direction: column; align-items: center; text-align: center;
+        gap: 8px; padding: 20px 16px; border-radius: var(--radius-sm);
+        border: 1px dotted #c9a227; background: #fff8db !important;
+      }
+      .schedule-table tbody tr.sponsor-row td,
+      .schedule-table tbody tr.sponsor-row td:first-child,
+      .schedule-table tbody tr.sponsor-row td:last-child {
+        display: block; width: 100%; padding: 0; background: transparent; border: none;
+      }
     }
   </style>
 </head>
@@ -479,6 +533,12 @@
 </section>
 
 <main>
+  <a class="sponsor-box" href="https://farmaciasdeguardiaparacuellos.es/patrocinio.html" aria-label="Información para patrocinadores">
+    <div class="sponsor-icon" aria-hidden="true">📣</div>
+    <div class="sponsor-text">¿Quieres que tu marca, producto o servicio aparezca en esta web?</div>
+    <span class="sponsor-cta">Más información →</span>
+  </a>
+
   <div class="section-header">
     <h2 class="section-title">Calendario de guardias</h2>
     <span class="month-tag">Agosto 2026</span>
@@ -631,6 +691,22 @@
   schedule.forEach(entry => {
     const isToday = isCurrentMonth && entry.day === todayDay;
     const wknd    = isWeekend(entry.dow);
+
+    if (isToday) {
+      const sponsorUrl = 'https://farmaciasdeguardiaparacuellos.es/patrocinio.html';
+      const sponsorTr = document.createElement('tr');
+      sponsorTr.className = 'sponsor-row';
+      sponsorTr.innerHTML = `
+        <td><span class="sponsor-row-icon" aria-hidden="true">📣</span></td>
+        <td><span class="sponsor-row-text">¿Quieres que tu marca, producto o servicio aparezca en esta web?</span></td>
+        <td><a class="sponsor-row-cta" href="${sponsorUrl}">Más información →</a></td>
+      `;
+      sponsorTr.addEventListener('click', (e) => {
+        if (!e.target.closest('a')) window.location.href = sponsorUrl;
+      });
+      tbody.appendChild(sponsorTr);
+    }
+
     const tr      = document.createElement('tr');
     if (isToday)    tr.classList.add('today');
     else if (wknd)  tr.classList.add('weekend');
