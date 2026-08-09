@@ -130,7 +130,7 @@
       border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
-    .logo { display: flex; align-items: center; gap: 14px; }
+    .logo { display: flex; align-items: center; gap: 14px; text-decoration: none; color: inherit; }
 
     .logo-cross {
       width: 40px; height: 40px;
@@ -447,13 +447,13 @@
 <body>
 
 <header role="banner">
-  <div class="logo">
+  <a class="logo" href="/" aria-label="Ir a la página principal">
     <div class="logo-cross" aria-hidden="true"></div>
     <div class="logo-text">
       <div class="main">Farmacias de Guardia</div>
       <div class="sub">Paracuellos · Ajalvir · Daganzo</div>
     </div>
-  </div>
+  </a>
   <nav aria-label="Municipios">
     <div class="header-towns">
       <span class="town-badge">Paracuellos de Jarama</span>
