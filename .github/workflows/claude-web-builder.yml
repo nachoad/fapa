@@ -5,7 +5,11 @@ on:
 
 jobs:
   claude:
-    if: github.event.label.name == 'claude-task'
+    # Solo issues propios: el contenido del issue es el prompt y Claude corre sin restricciones de permisos.
+    if: >-
+      github.event.label.name == 'claude-task' &&
+      github.event.issue.user.login == 'nachoad' &&
+      github.event.sender.login == 'nachoad'
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -20,7 +24,6 @@ jobs:
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          show_full_output: true
           claude_args: '--dangerously-skip-permissions'
           prompt: |
             Lee el título y la descripción del issue #${{ github.event.issue.number }} como una tarea de desarrollo web.
